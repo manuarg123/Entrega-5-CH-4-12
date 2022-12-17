@@ -1,0 +1,17 @@
+extend layout/template.pug
+block content
+  div.container
+    h1 Agregar Producto
+    if error
+      div(class="alert alert-danger")=error
+    form(action="/product" method="POST")
+      div.mb-3
+        label(for="title") Nombre
+        input(type="text" id="title" name="title"  value=title)
+      div.mb-3
+        label(for="price") Precio
+        input(type="text" id="price", name="price"  value=price)
+      div.mb-3
+        label(for="thumbnail") Foto 
+        input(type="text" id="thumbnail" name="thumbnail"  value=thumbnail)
+      button(class="btn btn-success") Agregar Producto
